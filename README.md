@@ -83,7 +83,7 @@ Jika memakai virtual environment, set binary Python di `.env`.
 
 ```env
 BGIFY_PYTHON_BINARY=C:\path\to\venv\Scripts\python.exe
-BGIFY_PROCESS_TIMEOUT=120
+BGIFY_PROCESS_TIMEOUT=180
 ```
 
 6. Jalankan frontend dan Laravel.

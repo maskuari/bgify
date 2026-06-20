@@ -37,8 +37,8 @@
         <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <a href="{{ route('home') }}" class="flex items-center gap-3 font-bold tracking-tight">
                 <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white p-1.5 shadow-lg shadow-indigo-500/20 ring-1 ring-slate-200 dark:ring-white/10">
-                    <img src="{{ asset('images/bgify-logo-color.png') }}" class="h-full w-full object-contain dark:hidden" alt="Logo Bgify">
-                    <img src="{{ asset('images/bgify-logo-dark.png') }}" class="hidden h-full w-full object-contain dark:block" alt="Logo Bgify dark">
+                    <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/bgify-logo-color.png" class="h-full w-full object-contain dark:hidden" alt="Logo Bgify">
+                    <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/bgify-logo-dark.png" class="hidden h-full w-full object-contain dark:block" alt="Logo Bgify dark">
                 </span>
                 <span class="text-xl">Bgify</span>
             </a>
@@ -102,7 +102,7 @@
                         <span class="shrink-0 rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-300 sm:text-xs">Ready</span>
                     </div>
                     <div class="relative aspect-square overflow-hidden rounded-[1.25rem] bg-slate-100 dark:bg-white/5 sm:rounded-[1.5rem]">
-                        <img src="{{ asset('images/hero-bgify-before-after.png') }}" class="h-full w-full object-cover" alt="Contoh foto sebelum dan sesudah background dihapus oleh Bgify">
+                        <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/hero-bgify-before-after.png" class="h-full w-full object-cover" alt="Contoh foto sebelum dan sesudah background dihapus oleh Bgify">
                         <div class="absolute right-4 top-[36%] rounded-2xl border border-white/40 bg-white/80 px-3 py-2 text-xs font-bold shadow-xl backdrop-blur dark:border-white/10 dark:bg-black/30 sm:right-5 sm:top-24 sm:px-4 sm:py-3 sm:text-sm">AI Cutout
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/40 bg-white/80 p-3 shadow-xl backdrop-blur dark:border-white/10 dark:bg-black/30 sm:bottom-5 sm:left-5 sm:right-5 sm:rounded-3xl sm:p-4">
