@@ -37,17 +37,27 @@
         <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <a href="{{ route('home') }}" class="flex items-center gap-3 font-bold tracking-tight">
                 <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white p-1.5 shadow-lg shadow-indigo-500/20 ring-1 ring-slate-200 dark:ring-white/10">
-                    <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/bgify-logo-color.png" class="h-full w-full object-contain dark:hidden" alt="Logo Bgify">
-                    <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/bgify-logo-dark.png" class="hidden h-full w-full object-contain dark:block" alt="Logo Bgify dark">
+                    <img src="{{ asset('images/bgify-logo-color.png') }}" class="h-full w-full object-contain dark:hidden" alt="Logo Bgify">
+                    <img src="{{ asset('images/bgify-logo-dark.png') }}" class="hidden h-full w-full object-contain dark:block" alt="Logo Bgify dark">
                 </span>
                 <span class="text-xl">Bgify</span>
             </a>
 
             <div class="flex items-center gap-3">
                 <a href="#upload" class="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/10 sm:inline-flex">Upload Foto</a>
-                <button type="button" id="themeToggle" class="inline-flex h-11 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/10 dark:text-white" aria-label="Ganti dark mode">
-                    <span id="themeIcon">*</span>
-                    <span id="themeLabel" class="hidden sm:inline">Light</span>
+                <button type="button" id="themeToggle" class="relative inline-flex h-10 w-[4.75rem] items-center justify-between rounded-full border border-slate-200 bg-white/90 p-1 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/10" aria-label="Ganti ke dark mode" aria-pressed="false">
+                    <span class="sr-only">Ganti tema</span>
+                    <span class="absolute left-1 top-1 h-8 w-8 translate-x-9 rounded-full bg-white shadow-md ring-1 ring-slate-200 transition-transform duration-300 dark:translate-x-0 dark:ring-white/10"></span>
+                    <span class="relative z-10 grid h-8 w-8 place-items-center text-slate-400 transition-colors dark:text-indigo-200">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M20.5 14.6A7.7 7.7 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="relative z-10 grid h-8 w-8 place-items-center text-amber-500 transition-colors dark:text-slate-400">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 4V2M12 22v-2M4.93 4.93 3.52 3.52M20.48 20.48l-1.41-1.41M4 12H2M22 12h-2M4.93 19.07l-1.41 1.41M20.48 3.52l-1.41 1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
                 </button>
             </div>
         </nav>

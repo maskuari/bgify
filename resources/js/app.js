@@ -29,8 +29,6 @@ const downloadHd = document.querySelector('#downloadHd');
 const resetButton = document.querySelector('#resetButton');
 const toast = document.querySelector('#toast');
 const themeToggle = document.querySelector('#themeToggle');
-const themeIcon = document.querySelector('#themeIcon');
-const themeLabel = document.querySelector('#themeLabel');
 
 let selectedFile = null;
 let originalObjectUrl = null;
@@ -102,8 +100,8 @@ function waitForImage(image, src) {
 
 function updateThemeControl() {
     const isDark = document.documentElement.classList.contains('dark');
-    themeIcon.textContent = isDark ? 'D' : 'L';
-    themeLabel.textContent = isDark ? 'Dark' : 'Light';
+    themeToggle?.setAttribute('aria-pressed', String(isDark));
+    themeToggle?.setAttribute('aria-label', isDark ? 'Ganti ke light mode' : 'Ganti ke dark mode');
 }
 
 function selectFile(file) {
