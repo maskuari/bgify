@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
@@ -13,9 +13,9 @@
     <meta property="og:title" content="Bgify - Hapus Background Foto Dalam Sekejap">
     <meta property="og:description" content="Hapus background foto otomatis dengan AI. Cepat, akurat, dan hasil PNG transparan berkualitas tinggi.">
     <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:image" content="{{ asset('images/og-bgify.svg') }}">
+    <meta property="og:image" content="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/og-bgify.svg">
 
-    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
     <script>
         if (localStorage.getItem('bgify-theme') === 'dark' || (!localStorage.getItem('bgify-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -23,7 +23,8 @@
         }
     </script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="/build/assets/app.css">
+    <script type="module" src="/build/assets/app2.js"></script>
 </head>
 <body class="min-h-screen overflow-x-hidden bg-slate-50 text-slate-950 antialiased transition-colors duration-300 dark:bg-[#070816] dark:text-white">
     <div class="pointer-events-none fixed inset-0 -z-10">
@@ -36,8 +37,8 @@
         <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <a href="{{ route('home') }}" class="flex items-center gap-3 font-bold tracking-tight">
                 <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white p-1.5 shadow-lg shadow-indigo-500/20 ring-1 ring-slate-200 dark:ring-white/10">
-                    <img src="{{ asset('images/bgify-logo-color.png') }}" class="h-full w-full object-contain dark:hidden" alt="Logo Bgify">
-                    <img src="{{ asset('images/bgify-logo-dark.png') }}" class="hidden h-full w-full object-contain dark:block" alt="Logo Bgify dark">
+                    <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/bgify-logo-color.png" class="h-full w-full object-contain dark:hidden" alt="Logo Bgify">
+                    <img src="https://raw.githubusercontent.com/maskuari/bgify/main/public/images/bgify-logo-dark.png" class="hidden h-full w-full object-contain dark:block" alt="Logo Bgify dark">
                 </span>
                 <span class="text-xl">Bgify</span>
             </a>
@@ -45,7 +46,7 @@
             <div class="flex items-center gap-3">
                 <a href="#upload" class="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/10 sm:inline-flex">Upload Foto</a>
                 <button type="button" id="themeToggle" class="inline-flex h-11 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/10 dark:text-white" aria-label="Ganti dark mode">
-                    <span id="themeIcon">☀</span>
+                    <span id="themeIcon">*</span>
                     <span id="themeLabel" class="hidden sm:inline">Light</span>
                 </button>
             </div>
@@ -92,8 +93,7 @@
                     </div>
                     <div class="relative aspect-square overflow-hidden rounded-[1.25rem] bg-slate-100 dark:bg-white/5 sm:rounded-[1.5rem]">
                         <img src="{{ asset('images/hero-bgify-before-after.png') }}" class="h-full w-full object-cover" alt="Contoh foto sebelum dan sesudah background dihapus oleh Bgify">
-                        <div class="absolute right-4 top-[36%] rounded-2xl border border-white/40 bg-white/80 px-3 py-2 text-xs font-bold shadow-xl backdrop-blur dark:border-white/10 dark:bg-black/30 sm:right-5 sm:top-24 sm:px-4 sm:py-3 sm:text-sm">
-                            ✨ AI Cutout
+                        <div class="absolute right-4 top-[36%] rounded-2xl border border-white/40 bg-white/80 px-3 py-2 text-xs font-bold shadow-xl backdrop-blur dark:border-white/10 dark:bg-black/30 sm:right-5 sm:top-24 sm:px-4 sm:py-3 sm:text-sm">AI Cutout
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/40 bg-white/80 p-3 shadow-xl backdrop-blur dark:border-white/10 dark:bg-black/30 sm:bottom-5 sm:left-5 sm:right-5 sm:rounded-3xl sm:p-4">
                             <div class="mb-2 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300 sm:mb-3 sm:text-xs sm:tracking-[0.2em]">
@@ -120,7 +120,11 @@
                     <form id="uploadForm" data-endpoint="{{ route('api.bgify.remove-background') }}">
                         <input id="imageInput" class="sr-only" type="file" name="image" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
                         <label id="dropzone" for="imageInput" class="group flex cursor-pointer flex-col items-center justify-center rounded-[1.5rem] border-2 border-dashed border-indigo-300 bg-indigo-50/70 px-6 py-12 text-center transition hover:-translate-y-1 hover:border-fuchsia-400 hover:bg-fuchsia-50 dark:border-white/15 dark:bg-white/5 dark:hover:bg-white/10">
-                            <span class="grid h-16 w-16 place-items-center rounded-3xl bg-gradient-to-br from-blue-600 to-fuchsia-600 text-3xl text-white shadow-xl shadow-indigo-500/30 transition group-hover:scale-105">↑</span>
+                            <span class="grid h-16 w-16 place-items-center rounded-3xl bg-gradient-to-br from-blue-600 to-fuchsia-600 text-white shadow-xl shadow-indigo-500/30 transition group-hover:scale-105">
+                                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M12 16V5M7 10l5-5 5 5M5 19h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                             <span class="mt-5 text-lg font-extrabold">Drag and drop gambar di sini</span>
                             <span class="mt-2 text-sm text-slate-500 dark:text-slate-400">atau klik untuk memilih file</span>
                         </label>
@@ -149,7 +153,7 @@
 
                     <div id="emptyState" class="grid min-h-[28rem] place-items-center rounded-[1.5rem] bg-slate-100 text-center dark:bg-white/5">
                         <div class="max-w-sm px-6">
-                            <div class="mx-auto grid h-16 w-16 place-items-center rounded-3xl bg-white text-3xl shadow-lg dark:bg-white/10">◎</div>
+                            <div class="mx-auto grid h-16 w-16 place-items-center rounded-3xl bg-white text-sm font-black text-indigo-600 shadow-lg dark:bg-white/10 dark:text-indigo-200">AI</div>
                             <p class="mt-5 text-lg font-extrabold">Preview akan tampil setelah gambar dipilih.</p>
                             <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Hasil AI, gambar asli, dan slider perbandingan tersedia di sini.</p>
                         </div>
@@ -187,7 +191,7 @@
                                 <img id="compareAfter" class="absolute inset-0 h-full w-full object-contain" alt="After">
                             </div>
                             <div id="compareHandle" class="pointer-events-none absolute inset-y-0 left-1/2 w-1 -translate-x-1/2 bg-white shadow-xl">
-                                <span class="absolute left-1/2 top-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-sm font-black text-indigo-600 shadow-xl">↔</span>
+                                <span class="absolute left-1/2 top-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-sm font-black text-indigo-600 shadow-xl">VS</span>
                             </div>
                             <input id="compareSlider" class="absolute inset-x-0 bottom-5 mx-auto h-2 w-[88%] cursor-ew-resize accent-indigo-600" type="range" min="0" max="100" value="50" aria-label="Slider before after">
                         </div>
@@ -254,3 +258,6 @@
     <div id="toast" class="fixed bottom-5 right-5 z-50 hidden max-w-sm rounded-2xl border border-white/30 bg-white/90 px-5 py-4 font-semibold text-slate-900 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-[#101225]/90 dark:text-white"></div>
 </body>
 </html>
+
+
+

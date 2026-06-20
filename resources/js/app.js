@@ -102,7 +102,7 @@ function waitForImage(image, src) {
 
 function updateThemeControl() {
     const isDark = document.documentElement.classList.contains('dark');
-    themeIcon.textContent = isDark ? '☾' : '☀';
+    themeIcon.textContent = isDark ? 'D' : 'L';
     themeLabel.textContent = isDark ? 'Dark' : 'Light';
 }
 

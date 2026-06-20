@@ -24,6 +24,8 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 COPY . .
 
+RUN rm -f public/hot
+
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 RUN npm ci && npm run build
@@ -38,9 +40,12 @@ RUN cp .env.example .env \
 
 ENV APP_ENV=production
 ENV APP_DEBUG=false
+ENV APP_URL=https://maskuari-bgify.hf.space
+ENV ASSET_URL=https://maskuari-bgify.hf.space
 ENV BGIFY_PYTHON_BINARY=python3
 ENV BGIFY_PROCESS_TIMEOUT=120
 
 EXPOSE 7860
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=7860"]
+
