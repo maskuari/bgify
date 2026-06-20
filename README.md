@@ -1,3 +1,12 @@
+﻿---
+title: Bgify
+emoji: 🖼️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
 # Bgify
 
 Bgify adalah aplikasi web modern untuk menghapus background foto secara otomatis menggunakan AI. Frontend dibangun dengan Blade, Tailwind CSS, dan JavaScript; backend Laravel memvalidasi upload lalu menjalankan script Python berbasis `rembg` dan `pillow`.
@@ -135,3 +144,4 @@ Kode aplikasi ini memakai API Laravel yang kompatibel dengan Laravel 10 sampai L
 ## Footer
 
 Created by Maskuari.2026
+
